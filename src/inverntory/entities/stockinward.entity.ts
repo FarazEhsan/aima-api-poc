@@ -8,7 +8,7 @@ import { ProductVariant } from "src/product/entities/productvariant.entity";
 export class StockInward extends BaseEntity{
     @PrimaryGeneratedColumn('identity')
     id:number
-    @Column({type:'number',name:'stock'})
+    @Column({type:'integer',name:'stock'})
     stock:number
     @Column({type:'date',name:'stockdate'})
     stockDate:Date
@@ -16,5 +16,5 @@ export class StockInward extends BaseEntity{
     supplier:Supplier
     @ManyToOne(()=>ProductVariant,productVariant=>productVariant.stockInwards)
     productVariant:ProductVariant
-    
+
 }

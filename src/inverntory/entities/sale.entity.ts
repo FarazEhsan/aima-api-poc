@@ -9,6 +9,6 @@ export class Sales extends BaseEntity {
     id:string
     @ManyToOne(()=>ProductVariant,productVariant=>productVariant.sales)
     productVariant:ProductVariant
-    @Column({type:'number'})
+    @Column({type:'integer'})
     quantity:number
 }

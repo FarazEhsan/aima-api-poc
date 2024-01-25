@@ -14,9 +14,9 @@ export class ProductVariant extends BaseEntity{
     product:Product
     @Column({type:'enum', enum:ProductUnit})
     unit:string 
-    @Column({type:'number'})
+    @Column({name:'currentstock'})
     currentStock:number
-    @Column({type:'number'})
+    @Column({name:'minimumstock'})
     minimumStock:number
     @OneToMany(()=>StockInward,stockInward=>stockInward.productVariant)
     stockInwards: StockInward[]

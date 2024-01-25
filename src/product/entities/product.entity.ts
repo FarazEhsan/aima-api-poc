@@ -14,10 +14,10 @@ export class Product extends BaseEntity {
   @Column({ type: 'varchar', length: 100, name: 'productdescription' })
   productDescription: string;
 
-  @Column({ type: 'number', name: 'minimumstock' })
+  @Column({ name: 'minimumstock' })
   minimumStock: number;
 
-  @Column({ type: 'number', name: 'stock' })
+  @Column({ name: 'stock' })
   stock: number;
 
   @ManyToOne(() => ProductCategory, productCategory => productCategory.products)
