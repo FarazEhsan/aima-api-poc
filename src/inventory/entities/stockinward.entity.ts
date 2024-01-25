@@ -10,8 +10,6 @@ export class StockInward extends BaseEntity{
     id:number
     @Column({type:'integer',name:'stock'})
     stock:number
-    @Column({type:'date',name:'stockdate'})
-    stockDate:Date
     @ManyToOne(()=>Supplier,supplier=>supplier.stockInwards)
     supplier:Supplier
     @ManyToOne(()=>ProductVariant,productVariant=>productVariant.stockInwards)

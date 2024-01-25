@@ -2,8 +2,9 @@ import { BaseEntity } from "src/base";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Product } from "./product.entity";
 import { ProductUnit } from "src/enums";
-import { StockInward } from "src/inverntory/entities/stockinward.entity";
-import { Sales } from "src/inverntory/entities/sale.entity";
+import { StockInward } from "src/inventory/entities/stockinward.entity";
+import { Sales } from "src/inventory/entities/sale.entity";
+
 
 
 @Entity('productvariant')

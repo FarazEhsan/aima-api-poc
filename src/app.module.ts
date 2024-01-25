@@ -3,14 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductModule } from './product/product.module';
-import { InverntoryModule } from './inverntory/inverntory.module';
+import { InventoryModule } from './inventory/inventory.module';
 
-
-
-console.log(require('glob').sync('**/*.entity{.ts,.js}'))
+console.log(require('glob').sync('**/*.entity{.ts,.js}'));
 @Module({
   imports: [
-   
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -21,10 +18,10 @@ console.log(require('glob').sync('**/*.entity{.ts,.js}'))
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-   
+
     ProductModule,
-   
-    InverntoryModule
+
+    InventoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

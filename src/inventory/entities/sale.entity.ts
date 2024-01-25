@@ -6,7 +6,7 @@ import { AfterInsert, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "
 @Entity('sale')
 export class Sales extends BaseEntity {
     @PrimaryGeneratedColumn('identity')
-    id:string
+    id:number
     @ManyToOne(()=>ProductVariant,productVariant=>productVariant.sales)
     productVariant:ProductVariant
     @Column({type:'integer'})
