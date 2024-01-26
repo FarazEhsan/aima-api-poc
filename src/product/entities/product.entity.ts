@@ -14,12 +14,6 @@ export class Product extends BaseEntity {
   @Column({ type: 'varchar', length: 100, name: 'productdescription' })
   productDescription: string;
 
-  @Column({ name: 'minimumstock' })
-  minimumStock: number;
-
-  @Column({ name: 'stock' })
-  stock: number;
-
   @ManyToOne(() => ProductCategory, productCategory => productCategory.products)
   category:ProductCategory
 

@@ -1,8 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { ProductCategoryService } from '../services/product-category.service';
 import { CreateProductCategoryDto } from '../dto/create-product-category.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Product Category')
 @Controller('product-category')
 export class ProductCategoryController {
     constructor(private readonly productCategoryService:ProductCategoryService){}

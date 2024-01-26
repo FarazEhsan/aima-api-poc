@@ -1,7 +1,9 @@
 import { Body, Controller, Delete, Get, Patch, Post } from '@nestjs/common';
 import { StockInwardService } from '../services/stock-inward.service';
 import { CreateStockInwardDto } from '../dto/create-stockinward.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Stock Inward')
 @Controller('stock-inward')
 export class StockInwardController {
     constructor(private readonly stockInwardService:StockInwardService){}
