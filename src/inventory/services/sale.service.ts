@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
 import { Sales } from '../entities/sale.entity';
 import { EntityManager, Repository } from 'typeorm';
-import { ProductVariant } from 'src/product/entities/productvariant.entity';
+import { ProductVariant } from '../../product/entities/productvariant.entity';
 import { CreateSalesDto } from '../dto/create-sale.dto';
 
 @Injectable()

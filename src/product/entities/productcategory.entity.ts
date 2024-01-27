@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Product } from "./product.entity";
-import { BaseEntity } from "src/base";
+import { BaseEntity } from "../../base"
 
 @Entity('productcategory')
 export class ProductCategory extends BaseEntity{

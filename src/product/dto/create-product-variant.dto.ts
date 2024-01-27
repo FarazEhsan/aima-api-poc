@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, IsEnum, IsNumber, IsOptional, IsArray, ValidateNested, Min } from 'class-validator';
-import { ProductUnit } from 'src/enums';
+import { ProductUnit } from '../../enums';
 
 export class CreateProductVariantDto {
 

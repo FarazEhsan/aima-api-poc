@@ -1,4 +1,4 @@
-import { BaseEntity } from "src/base";
+import { BaseEntity } from "../../base"
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { StockInward } from "./stockinward.entity";
 

@@ -3,6 +3,7 @@ import { ProductVariantService } from '../services/product-variant.service';
 import { CreateProductVariantDto } from '../dto/create-product-variant.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
+import { UpdateProductVariantDto } from '../dto/update-product-variant.dto';
 
 @ApiBearerAuth()
 @ApiTags('Product Variant')
@@ -27,7 +28,7 @@ export class ProductVariantController {
     }
 
     @Patch(':id')
-    update(@Param('id') id:number,@Body() updateProductVariantDto:CreateProductVariantDto){
+    update(@Param('id') id:number,@Body() updateProductVariantDto:UpdateProductVariantDto){
         return this.productVariantService.update(id,updateProductVariantDto)
     }
 

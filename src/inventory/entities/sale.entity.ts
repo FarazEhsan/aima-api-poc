@@ -1,5 +1,5 @@
-import { BaseEntity } from "src/base"
-import { ProductVariant } from "src/product/entities/productvariant.entity"
+import { BaseEntity } from "../../base"
+import { ProductVariant } from "../../product/entities/productvariant.entity"
 import { AfterInsert, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 
 

@@ -3,8 +3,8 @@ import { StockInward } from '../entities/stockinward.entity';
 import { EntityManager, Repository } from 'typeorm';
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
 import { CreateStockInwardDto } from '../dto/create-stockinward.dto';
-import { ProductVariant } from 'src/product/entities/productvariant.entity';
-import { ProductVariantService } from 'src/product/services/product-variant.service';
+import { ProductVariant } from '../../product/entities/productvariant.entity';
+import { ProductVariantService } from '../../product/services/product-variant.service';
 import { Supplier } from '../entities/supplier.entity';
 
 @Injectable()

@@ -1,7 +1,7 @@
-import { BaseEntity } from "src/base";
+import { BaseEntity } from "../../base"
 import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Supplier } from "./supplier.entity";
-import { ProductVariant } from "src/product/entities/productvariant.entity";
+import { ProductVariant } from "../../product/entities/productvariant.entity";
 
 
 @Entity('stockinward')

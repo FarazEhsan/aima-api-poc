@@ -1,9 +1,9 @@
-import { BaseEntity } from "src/base";
+import { BaseEntity } from "../../base"
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Product } from "./product.entity";
-import { ProductUnit } from "src/enums";
-import { StockInward } from "src/inventory/entities/stockinward.entity";
-import { Sales } from "src/inventory/entities/sale.entity";
+import { ProductUnit } from "../../enums";
+import { StockInward } from "../../inventory/entities/stockinward.entity";
+import { Sales } from "../../inventory/entities/sale.entity";
 
 
 
