@@ -1,10 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { ProductCategoryService } from '../services/product-category.service';
 import { CreateProductCategoryDto } from '../dto/create-product-category.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
+@ApiBearerAuth()
 @ApiTags('Product Category')
 @Controller('product-category')
+@UseGuards(AuthGuard('jwt'))
 export class ProductCategoryController {
     constructor(private readonly productCategoryService:ProductCategoryService){}
 

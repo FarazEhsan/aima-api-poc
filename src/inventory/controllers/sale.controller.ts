@@ -1,10 +1,14 @@
-import { Body, Controller, Delete, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Patch, Post, UseGuards } from '@nestjs/common';
 import { CreateSalesDto } from '../dto/create-sale.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { SaleService } from '../services/sale.service';
+import { AuthGuard } from '@nestjs/passport';
 
+
+@ApiBearerAuth()
 @ApiTags('Sale')
 @Controller('sale')
+@UseGuards(AuthGuard('jwt'))
 export class SaleController {
   constructor(private readonly salesService:SaleService){}
 

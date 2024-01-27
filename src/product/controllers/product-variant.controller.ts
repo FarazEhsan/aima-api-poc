@@ -1,11 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { ProductVariantService } from '../services/product-variant.service';
 import { CreateProductVariantDto } from '../dto/create-product-variant.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
-
+@ApiBearerAuth()
 @ApiTags('Product Variant')
 @Controller('product-variant')
+@UseGuards(AuthGuard('jwt'))
 export class ProductVariantController {
     constructor(private readonly productVariantService:ProductVariantService){}
 

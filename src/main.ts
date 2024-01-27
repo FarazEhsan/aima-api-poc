@@ -12,9 +12,10 @@ async function bootstrap() {
     .setTitle('AIMA API')
     .setDescription('POC for AIMA API')
     .setVersion('1.0')
+    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT', in: 'header'})
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {swaggerOptions:{tagsSorter: 'alpha', operationsSorter: 'alpha'}});
 
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
