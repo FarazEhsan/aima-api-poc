@@ -4,6 +4,7 @@ import { ProductVariantService } from '../services/product-variant.service';
 import { UpdateProductVariantDto } from '../dto/update-product-variant.dto';
 import { ProductUnit } from '../../enums';
 import { CreateProductVariantDto } from '../dto/create-product-variant.dto';
+import { ProductService } from '../product.service';
 
 
 describe('ProductVariantController', () => {
@@ -14,6 +15,7 @@ describe('ProductVariantController', () => {
       controllers: [ProductVariantController],
       providers: [
         ProductVariantService,
+        ProductService,
         {
           provide: 'ProductVariantRepository',
 
@@ -59,6 +61,9 @@ describe('ProductVariantController', () => {
             }),
           },
         },
+        {provide: 'ProductRepository', useValue: {
+          findOne:jest.fn().mockResolvedValue({}),
+        }}
       ],
     }).compile();
 

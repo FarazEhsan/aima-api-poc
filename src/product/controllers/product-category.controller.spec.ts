@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductCategoryController } from './product-category.controller';
 import { ProductCategoryService } from '../services/product-category.service';
 import { CreateProductCategoryDto } from '../dto/create-product-category.dto';
+import { ProductService } from '../product.service';
 
 describe('ProductCategoryController', () => {
   let controller: ProductCategoryController;
@@ -11,6 +12,7 @@ describe('ProductCategoryController', () => {
       controllers: [ProductCategoryController],
       providers: [
         ProductCategoryService,
+        ProductService,
         {
           provide: 'ProductCategoryRepository',
           useValue: {
@@ -51,6 +53,7 @@ describe('ProductCategoryController', () => {
             }),
           },
         },
+        {provide: 'ProductRepository', useValue: {}}
       ],
     }).compile();
 

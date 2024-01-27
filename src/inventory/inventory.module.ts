@@ -11,11 +11,13 @@ import { SaleService } from './services/sale.service';
 import { SupplierController } from './controllers/supplier.controller';
 import { StockInwardController } from './controllers/stock-inward.controller';
 import { SaleController } from './controllers/sale.controller';
+import { InventoryReportController } from './controllers/inventory-report.controller';
+import { InventoryReportService } from './services/inventory-report.service';
 
 
 @Module({
   imports: [TypeOrmModule.forFeature([Sales, Supplier, StockInward])],
-  controllers: [InventoryController, SupplierController, StockInwardController, SaleController],
-  providers: [InventoryService, SupplierService, StockInwardService, SaleService],
+  controllers: [InventoryController, SupplierController, StockInwardController, SaleController, InventoryReportController],
+  providers: [InventoryService, SupplierService, StockInwardService, SaleService, InventoryReportService],
 })
 export class InventoryModule {}

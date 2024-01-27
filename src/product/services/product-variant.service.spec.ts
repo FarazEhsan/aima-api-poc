@@ -6,6 +6,7 @@ import { ProductVariant } from '../entities/productvariant.entity';
 import { CreateProductVariantDto } from '../dto/create-product-variant.dto';
 import { UpdateProductVariantDto } from '../dto/update-product-variant.dto';
 import { ProductUnit } from '../../enums';
+import { ProductService } from '../product.service';
 
 describe('ProductVariantService', () => {
   let service: ProductVariantService;
@@ -25,6 +26,10 @@ describe('ProductVariantService', () => {
             delete: jest.fn().mockResolvedValue('delete'),
           },
         },
+        { provide: ProductService, useValue: {
+          findOne:jest.fn().mockResolvedValue({}),
+          
+        } },
       ],
     }).compile();
 
