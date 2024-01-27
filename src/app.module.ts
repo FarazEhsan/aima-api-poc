@@ -11,8 +11,8 @@ console.log(require('glob').sync('**/*.entity{.ts,.js}'));
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5433,
+      host: 'db',
+      port: 5432,
       username: 'postgres',
       password: 'password',
       database: 'aima-db',
